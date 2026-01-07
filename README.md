@@ -40,10 +40,10 @@ The `WackamoleManager` handles complex sprite states to provide visual feedback:
 ## Credits
 Developed by the **Rhythm Raven Team**:
 * **Kevin Lu:** Project Lead and Gameplay Engineer.
-* **Hana Kopp** Art and Game Flow Engineer.
-* **Carter Ng-Yu** Gameplay Engineer.
-* **Kalen Lauring** Gampleplay Engineer and Audio Track Producer.
-* **Carlos Schober** Gameplay Engineer and Audio Track Producer.
-* **Cindie Li** Art
+* **Hana Kopp:** Art and Game Flow Engineer.
+* **Carter Ng-Yu:** Gameplay Engineer.
+* **Kalen Lauring:** Gampleplay Engineer and Audio Track Producer.
+* **Carlos Schober:** Gameplay Engineer and Audio Track Producer.
+* **Cindie Li:** Art
 
 ---
