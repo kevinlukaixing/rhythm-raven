@@ -44,6 +44,6 @@ Developed by the **Rhythm Raven Team**:
 * **Carter Ng-Yu:** Gameplay Engineer.
 * **Kalen Lauring:** Gampleplay Engineer and Audio Track Producer.
 * **Carlos Schober:** Gameplay Engineer and Audio Track Producer.
-* **Cindie Li:** Art
+* **Cindie Li:** Art.
 
 ---
