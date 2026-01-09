@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class WackamoleManager : BeatmapVisualizerSimple
 {
-    // ... [Existing HoleSprites Class] ...
     [System.Serializable]
     public class HoleSprites
     {
@@ -135,6 +134,7 @@ public class WackamoleManager : BeatmapVisualizerSimple
                 if (t != null) scoreText = t.GetComponent<TextMeshProUGUI>();
             }
         }
+
         UpdateScoreDisplay();
         
         if (flashPanel != null) flashPanel.SetActive(false);
@@ -153,10 +153,9 @@ public class WackamoleManager : BeatmapVisualizerSimple
     private void CreateSimpleBeatmap()
     {
         beatmapBuilder builder = new beatmapBuilder(30); 
-        // Tutorial
+
         builder.PlaceQuarterNote(3, 1, 1);
         builder.PlaceQuarterNote(4, 1, 6);
-        // Sequence
         builder.PlaceQuarterNote(5, 1, 3); 
         builder.PlaceQuarterNote(6, 1, 2); 
         builder.PlaceQuarterNote(6, 3, 5); 
@@ -177,7 +176,6 @@ public class WackamoleManager : BeatmapVisualizerSimple
         builder.PlaceQuarterNote(17, 1, 3);
         builder.PlaceQuarterNote(17, 3, 4);
         builder.PlaceQuarterNote(18, 1, 5);
-        // Consecutive notes
         builder.PlaceQuarterNote(19, 1, 3);
         builder.PlaceQuarterNote(19, 2, 1);
         builder.PlaceQuarterNote(19, 3, 4);
@@ -411,7 +409,6 @@ public class WackamoleManager : BeatmapVisualizerSimple
             hole.smileWormSprite.transform.localPosition = hole.smileWormStartPos;
             hole.smileWormSprite.SetActive(false);
         }
-        // We do NOT hide the idleSprite here, as that should usually be visible when others are down
     }
 
     private void TriggerGhostAnimation(int holeIndex)
@@ -421,7 +418,7 @@ public class WackamoleManager : BeatmapVisualizerSimple
         {
             if (hole.visualCoroutine != null) StopCoroutine(hole.visualCoroutine);
             
-            // FIX: Instead of just hiding wormSprite, we force reset ALL visuals.
+            // Instead of just hiding wormSprite, we force reset ALL visuals.
             // This prevents the "SmileWorm" from getting stuck if it was active.
             ForceResetHoleVisuals(hole);
 
@@ -429,7 +426,7 @@ public class WackamoleManager : BeatmapVisualizerSimple
             hole.isInputWindowOpen = false;
             
             // Set Ghost to start at the worm's position (conceptually)
-            hole.ghostSprite.transform.localPosition = hole.wormStartPos; // Or wormSprite position if you want it to pop from ground
+            hole.ghostSprite.transform.localPosition = hole.wormStartPos; 
             hole.ghostSprite.SetActive(true);
             StartCoroutine(GhostFloatAnimation(hole));
         }
@@ -440,11 +437,12 @@ public class WackamoleManager : BeatmapVisualizerSimple
         var hole = holeSprites[holeIndex];
         if (hole.isAnimating) return; 
 
-        // FIX: Ensure clean slate before starting animation
+        // Ensure clean slate before starting animation
         ForceResetHoleVisuals(hole);
 
         GameObject targetSprite = isWorm ? hole.wormSprite : hole.snakeSprite;
         Vector3 startPos = isWorm ? hole.wormStartPos : hole.snakeStartPos;
+
         if (targetSprite != null)
         {
             hole.currentIsWorm = isWorm;
@@ -498,7 +496,7 @@ public class WackamoleManager : BeatmapVisualizerSimple
             yield return null;
         }
 
-        // FIX: Instead of just hiding currentVisibleSprite, call the full reset.
+        // Instead of just hiding currentVisibleSprite, call the full reset.
         // This ensures no floating point errors or wrong sprites are left enabled.
         ForceResetHoleVisuals(hole);
         
