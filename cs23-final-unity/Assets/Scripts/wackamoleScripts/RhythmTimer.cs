@@ -112,11 +112,13 @@ public class RhythmTimer : MonoBehaviour
     public void StartMusic()
     {
         isPlaying = true;
-        lastTambourineTick = -1; // Reset tick tracking
+
+        // Reset tick tracking
+        lastTambourineTick = -1; 
         if (musicSource != null && !musicSource.isPlaying)
         {
             startDspTime = AudioSettings.dspTime;
-            songStartTime = startDspTime + 0.1f; // Small buffer
+            songStartTime = startDspTime + 0.1f; 
             
             // Schedule playback for accurate timing
             musicSource.PlayScheduled(songStartTime);

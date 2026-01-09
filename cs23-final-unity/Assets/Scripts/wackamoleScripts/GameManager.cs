@@ -41,11 +41,6 @@ public class GameManager : MonoBehaviour
         {
             volumeSlider.value = VolumeDefiner.vol;
             volumeSlider.onValueChanged.AddListener(SetVolume);
-            
-            //// Load saved volume
-            //float savedVolume = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-            //volumeSlider.value = savedVolume;
-            //SetVolume(savedVolume);
         }
         
         Debug.Log("Game paused for instructions. Press Enter to start.");
@@ -131,9 +126,6 @@ public class GameManager : MonoBehaviour
             if (pauseMenuUI != null) pauseMenuUI.SetActive(true);
 
             Debug.Log("Game Paused");
-
-            // DON'T use Time.timeScale = 0 for rhythm games!
-            // Instead, pause the audio and stop game logic
 
             if (rhythmTimer != null)
             {
