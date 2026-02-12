@@ -16,34 +16,28 @@
 ## Technical Architecture
 
 ### 1. DSP Audio Synchronization
-The core of the engine is the `RhythmTimer` class.
-* **The Problem:** Standard `Update()` loops cause "drift" because frames are variable, while audio is continuous.
-* **The Solution:** Implemented a scheduling system based on `AudioSettings.dspTime` to calculate the exact song position independent of the rendering pipeline.
+The core timing system is built on `AudioSettings.dspTime` rather than frame-based `Update()` loops. This ensures that beat markers, input windows, and visual cues stay perfectly aligned with the audio track regardless of frame rate fluctuations.
 
 ### 2. Tick-Based Quantization
-Input windows are calculated using "Ticks" (1/4 of a beat) rather than milliseconds.
-* **Abstract Implementation:** The `BeatmapVisualizerSimple` class listens for tick changes (`curr_tick != lastTick`) and triggers events only on specific quantization steps.
-* **Modular Design:** This allows different minigames (like *Whack-a-Mole*) to inherit the timing logic while implementing unique gameplay mechanics.
+Input windows and gameplay events are calculated using "Ticks" (subdivisions of a beat) rather than raw milliseconds. An abstract base class allows each minigame to subscribe to tick events and implement its own beat-driven logic on top of the shared timing system.
 
-### 3. State Machine & Input Validation
-The `WackamoleManager` handles complex sprite states to provide visual feedback:
-* **Dynamic Sprite Swapping:** Manages states for Idle, Snake, Worm, and "Smile Worm" (success state) based on beat triggers.
-* **Input Validation:** Implements a "Coyote Time" window (`inputWindowSize`) allowing players to hit notes slightly early or late while maintaining a "Perfect" score streak.
-* **Coroutine Management:** Uses coroutines (`PopUpAnimation`) that are strictly timed to the `quarterNoteTime` to ensure animations start and end exactly on the beat.
+### 3. Modular Minigame System
+The game is structured around multiple beat-synced minigames, each with unique mechanics:
+* **Whack-a-Mole** — Tap targets that appear on the beat with forgiving input windows.
+* Each level inherits from the core timing engine, allowing new minigames to be added without reimplementing audio synchronization.
 
-## Key Scripts (Wackamole Level)
-* `RhythmTimer.cs`: The master clock using `AudioSettings.dspTime`.
-* `WackamoleManager.cs`: Level controller managing score, input windows, and sprite pooling.
-* `BeatmapVisualizerSimple.cs`: Abstract base class for beat interpretation.
-* `GameManager.cs`: Global state manager handling pausing, scenes, and volume mixing.
+### 4. State Management & Game Flow
+A global state manager handles scene transitions, pausing, volume mixing, and score tracking across all levels.
 
 ## Credits
 Developed by the **Rhythm Raven Team**:
-* **Kevin Lu:** Project Lead and Gameplay Engineer.
-* **Hana Kopp:** Art and Game Flow Engineer.
-* **Carter Ng-Yu:** Gameplay Engineer.
-* **Kalen Lauring:** Gampleplay Engineer and Audio Track Producer.
-* **Carlos Schober:** Gameplay Engineer and Audio Track Producer.
-* **Cindie Li:** Art.
+* **Kevin Lu:** 
+* **Hana Kopp:** 
+* **Carter Ng-Yu:** 
+* **Kalen Lauring:** 
+* **Carlos Schober:** 
+* **Cindie Li:** 
+
+For individual contributions, see [CONTRIBUTIONS.md](./CONTRIBUTIONS.md).
 
 ---
