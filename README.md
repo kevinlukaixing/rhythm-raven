@@ -23,7 +23,11 @@ Input windows and gameplay events are calculated using "Ticks" (subdivisions of 
 
 ### 3. Modular Minigame System
 The game is structured around multiple beat-synced minigames, each with unique mechanics:
-* **Whack-a-Mole** — Tap targets that appear on the beat with forgiving input windows.
+* **Level 1: Telephone-Line** - Time your bird chirp on the 4th beat with input windows.
+* **Level 2: Star-Collector** - Move your bird up and down and tap when you come across a star.
+* **Level 3: Whack-a-Mole** — Tap targets that appear on the beat with input windows.
+* **Level 4: Mosh-Pit** - Tap every every time a bird hits you with input windows.
+* **Level 5: Wine-Connoisseur** - Recreate the tapping sequence the wine connoisseur performs.
 * Each level inherits from the core timing engine, allowing new minigames to be added without reimplementing audio synchronization.
 
 ### 4. State Management & Game Flow
@@ -35,9 +39,9 @@ Developed by the **Rhythm Raven Team**:
 | Team Member | Role | Contributions |
 |---|---|---|
 | Kevin Lu | Project Lead & Gameplay Engineer | [View](./CONTRIBUTIONS.md#kevin-lu--project-lead--gameplay-engineer) |
-| Hana Kopp | Art & Game Flow Engineer | [View](./CONTRIBUTIONS.md#hana-kopp--art--game-flow-engineer) |
-| Carter Ng-Yu | Gameplay Engineer | [View](./CONTRIBUTIONS.md#carter-ng-yu--gameplay-engineer) |
 | Kalen Lauring | Gameplay Engineer & Audio Track Producer | [View](./CONTRIBUTIONS.md#kalen-lauring--gameplay-engineer--audio-track-producer) |
+| Carter Ng-Yu | Gameplay Engineer | [View](./CONTRIBUTIONS.md#carter-ng-yu--gameplay-engineer) |
+| Hana Kopp | Art & Game Flow Engineer | [View](./CONTRIBUTIONS.md#hana-kopp--art--game-flow-engineer) |
 | Carlos Schober | Gameplay Engineer & Audio Track Producer | [View](./CONTRIBUTIONS.md#carlos-schober--gameplay-engineer--audio-track-producer) |
 | Cindie Li | Art | [View](./CONTRIBUTIONS.md#cindie-li--art) |
 
