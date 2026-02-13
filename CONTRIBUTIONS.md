@@ -27,6 +27,12 @@ Built `GameManager.cs` to handle pausing, scene transitions, and volume mixing a
 
 ---
 
+## Kalen Lauring — Gameplay Engineer & Audio Track Producer
+
+*Section to be filled in by Kalen.*
+
+---
+
 ## Hana Kopp — Art & Game Flow Engineer
 
 *Section to be filled in by Hana.*
@@ -36,12 +42,6 @@ Built `GameManager.cs` to handle pausing, scene transitions, and volume mixing a
 ## Carter Ng-Yu — Gameplay Engineer
 
 *Section to be filled in by Carter.*
-
----
-
-## Kalen Lauring — Gameplay Engineer & Audio Track Producer
-
-*Section to be filled in by Kalen.*
 
 ---
 

@@ -31,13 +31,14 @@ A global state manager handles scene transitions, pausing, volume mixing, and sc
 
 ## Credits
 Developed by the **Rhythm Raven Team**:
-* **Kevin Lu:** 
-* **Hana Kopp:** 
-* **Carter Ng-Yu:** 
-* **Kalen Lauring:** 
-* **Carlos Schober:** 
-* **Cindie Li:** 
 
-For individual contributions, see [CONTRIBUTIONS.md](./CONTRIBUTIONS.md).
+| Team Member | Role | Contributions |
+|---|---|---|
+| Kevin Lu | Project Lead & Gameplay Engineer | [View](./CONTRIBUTIONS.md#kevin-lu--project-lead--gameplay-engineer) |
+| Hana Kopp | Art & Game Flow Engineer | [View](./CONTRIBUTIONS.md#hana-kopp--art--game-flow-engineer) |
+| Carter Ng-Yu | Gameplay Engineer | [View](./CONTRIBUTIONS.md#carter-ng-yu--gameplay-engineer) |
+| Kalen Lauring | Gameplay Engineer & Audio Track Producer | [View](./CONTRIBUTIONS.md#kalen-lauring--gameplay-engineer--audio-track-producer) |
+| Carlos Schober | Gameplay Engineer & Audio Track Producer | [View](./CONTRIBUTIONS.md#carlos-schober--gameplay-engineer--audio-track-producer) |
+| Cindie Li | Art | [View](./CONTRIBUTIONS.md#cindie-li--art) |
 
 ---
